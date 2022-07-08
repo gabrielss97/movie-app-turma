@@ -5,6 +5,7 @@
   padding: 0;
   margin: 0;
   font-family: "Poppins", sans-serif;
+  color: white;
 }
 
 body {
@@ -16,4 +17,30 @@ header {
     display: flex;
     justify-content: flex-end;
     padding-right: 2rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+  column-gap: 70px;
+}
+
+.movie img {
+  width: 300px;
+}
+
+.green {
+  color: green;
+}
+
+.orange {
+  color: orange;
+}
+
+.red {
+  color: red;
+}
+
+input {
+  color: black;
 }
