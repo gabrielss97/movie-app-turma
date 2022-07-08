@@ -19,27 +19,24 @@ async function getMovies(url) {
 function createCards(movies) {
   mainEl.innerHTML = "";
   movies.forEach((movie) => {
+    const { poster_path, title, vote_average, overview } = movie;
     const movieCardEl = document.createElement("div");
     movieCardEl.classList.add("movie");
 
     movieCardEl.innerHTML = `
     <img
-    src="${IMGPATH + movie.poster_path}"
-    alt="${movie.title}"
+    src="${IMGPATH + poster_path}"
+    alt="${title}"
     />
     <div class="movie-info">
-    <h3>${movie.title}</h3>
+    <h3>${title}</h3>
     <span class="${
-      movie.vote_average >= 8
-        ? "green"
-        : movie.vote_average >= 5
-        ? "orange"
-        : "red"
-    }">${movie.vote_average}</span>
+      vote_average >= 8 ? "green" : vote_average >= 5 ? "orange" : "red"
+    }">${vote_average}</span>
     </div>
     <div class="overview">
     <h3>Overview:</h3>
-    ${movie.overview}
+    ${overview}
     </div>
     `;
     mainEl.appendChild(movieCardEl);
